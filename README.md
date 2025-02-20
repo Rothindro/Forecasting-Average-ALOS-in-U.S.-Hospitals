@@ -19,12 +19,12 @@ In this project, we have utilized two dataset, which contains historical Total I
 ## Methods
 The project employs time series analysis techniques, including:
 
--__Seasonal Indexing:__ To identify seasonal patterns in ALOS data.
--__Linear Regression:__ To forecast ALOS for the next four quarters (2023).
+- __Seasonal Indexing:__ To identify seasonal patterns in ALOS data.
+- __Linear Regression:__ To forecast ALOS for the next four quarters (2023).
 
 ## Tools
--__Programming Language:__ Python
--__Libraries:__ NumPy, Pandas, Matplotlib, Statsmodels, Scikit-learn
--__Environment:__ Jupyter Notebook
+- __Programming Language:__ Python
+- __Libraries:__ NumPy, Pandas, Matplotlib, Statsmodels, Scikit-learn
+- __Environment:__ Jupyter Notebook
 
 The project will deliver a robust and scalable forecasting model capable of predicting average ALOS for the next four quarters. This model will uncover seasonal trends in ALOS in US hospitals, particularly during peak periods (e.g., Q1 and Q4) driven by seasonal diseases like influenza, RSV, common cold, etc. The forecasted result will further help in capacity planning, resource allocation, and revenue management, helping hospitals improve operational efficiency and patient care delivery.
