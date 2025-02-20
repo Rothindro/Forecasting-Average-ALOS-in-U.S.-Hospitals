@@ -9,6 +9,7 @@ Extrcated two datasets from Federal Reserve Economic Data ([FRED](https://fred.s
 - __Total Discharges for Hospitals__ (2005–2022)
 
 The ALOS is derived from these datasets by calculating the ratio of inpatient days to discharges for each time period. 
+
 ALOS = Total Inpatient Days/Total Discharges
 
 In this project, we have utilized two dataset, which contains historical Total Inpatient Days and Total Discharges data obtained from Quarterly Services Survey of US hospitals over theyears. The dataset includes metrics such as:
