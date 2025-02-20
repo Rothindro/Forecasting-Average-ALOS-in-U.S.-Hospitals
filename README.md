@@ -3,7 +3,7 @@
 ## Overview:
 The primary aim of this project is to analyze the Average Length of Stay (ALOS) in hospitals and forecast future trends. By leveraging the historical data of inpatient days and hospital discharges, this project seeks to understand trends in ALOS data to investigate the effect of seasonal diseases like flu, respiratory illness, etc; and finally to forecast the future ALOS values. This analysis will help in making informed decisions regarding capacity planning, resource allocation, and operational efficiency in healthcare settings.
 
-Extrcated two [datasets](https://fred.stlouisfed.org/) from Federal Reserve Economic Data (FRED) website:
+Extrcated two datasets from Federal Reserve Economic Data ([FRED](https://fred.stlouisfed.org/)) website:
 
 - __Total Inpatient Days for Hospitals__ (2005–2022)
 - __Total Discharges for Hospitals__ (2005–2022)
@@ -13,7 +13,7 @@ ALOS = Total Inpatient Days/Total Discharges
 
 In this project, we have utilized two dataset, which contains historical Total Inpatient Days and Total Discharges data obtained from Quarterly Services Survey of US hospitals over theyears. The dataset includes metrics such as:
 
-- __date:-__	Starting Date for the quarter
+- __date:-__	Starting dates of the quarter
 - __Value:-__	Total Inpatient Days (Total Inpatient Days for Hospitals) / Total Discharges (Total Discharges for Hospitals)
 
 ## Methods
