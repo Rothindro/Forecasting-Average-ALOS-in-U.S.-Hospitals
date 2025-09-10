@@ -1,31 +1,46 @@
-# Forecasting Average Length of Stay (ALOS) in U.S. Hospitals Using Seasonal Indexing and Linear Regression.
+# Forecasting Average Length of Stay (ALOS) in U.S. Hospitals.
 ---
 ## Overview:
-The primary aim of this project is to analyze the Average Length of Stay (ALOS) in hospitals and forecast future trends. By leveraging the historical data of inpatient days and hospital discharges, this project seeks to understand trends in ALOS data to investigate the effect of seasonal diseases like flu, respiratory illness, etc; and finally to forecast the future ALOS values. This analysis will help in making informed decisions regarding capacity planning, resource allocation, and operational efficiency in healthcare settings.
+The primary goal of this project is to develop a robust time series forecasting model to predict the ALOS for patients in US hospitals. ALOS is a critical Key Performance Indicator (KPI) in healthcare, calculated as the average number of days a patient remains admitted to a hospital.
 
-Extrcated two datasets from Federal Reserve Economic Data ([FRED](https://fred.stlouisfed.org/)) website:
+By accurately forecasting ALOS, one can:
 
-- __Total Inpatient Days for Hospitals__ (2005–2022)
-- __Total Discharges for Hospitals__ (2005–2022)
+* Enhance Operational Efficiency: Help hospital administrators anticipate patient flow, optimize bed capacity, manage staffing levels, and improve resource allocation (e.g., medical supplies, room cleaning schedules)
 
-The ALOS is derived from these datasets by calculating the ratio of inpatient days to discharges for each time period. 
+* Improve Financial Planning: ALOS is directly tied to healthcare costs and reimbursement models. Forecasting allows for better budget forecasting and financial risk management
 
-ALOS = Total Inpatient Days/Total Discharges
+* Support Strategic Decision-Making: Provide data-driven insights into trends and seasonal patterns in patient stays, which can inform long-term strategic plans and policy decisions at institutional and regional levels
 
-In this project, we have utilized two dataset, which contains historical Total Inpatient Days and Total Discharges data obtained from Quarterly Services Survey of US hospitals over theyears. The dataset includes metrics such as:
+* Identify Anomalies: The model can serve as a baseline to detect unexpected shifts in ALOS, potentially flagging issues like new disease outbreaks, changes in treatment protocols, or administrative bottlenecks
 
-- __date:-__	Starting dates of the quarter
-- __Value:-__	Total Inpatient Days (Total Inpatient Days for Hospitals) / Total Discharges (Total Discharges for Hospitals)
+This analysis leverages two pivotal datasets extracted from the ([FRED](https://fred.stlouisfed.org/)) website using the FRED API:
+
+Dataset 1: ([Total Discharges for Hospitals](https://fred.stlouisfed.org/series/DISC622ALLEST176QNSA))
+
+* Description: This time series data records the total number of patients discharged from US hospitals. A discharge occurs whenever a patient is released, transferred to another facility, or passes away.
+
+* Significance: This metric represents the total volume of patient turnover and is a direct measure of hospital throughput.
+
+Dataset 2: ([Total Inpatient Days for Hospitals](https://fred.stlouisfed.org/series/INPAT622ALLEST176QNSA))
+
+* Description: This time series data records the sum of all days spent by all patients in the hospital during a given period. For example, if 5 patients each stay 4 days, the total inpatient days for that period would be 20.
+
+* Significance: This metric captures the total utilization or "bed-day" consumption of hospital resources.
+
+$$\text{ALOS} = \frac{\text{total_inpatient_days}}{\text{total_discharge}}$$
 
 ## Methods
-The project employs time series analysis techniques, including:
+The project employs various time series analysis techniques, including:
 
-- __Seasonal Indexing:__ To identify seasonal patterns in ALOS data.
-- __Linear Regression:__ To forecast ALOS for the next four quarters (2023).
+- __Data Extraction:__ Fetch 'Total Discharges' and 'Total Inpatient Days' dataset from FRED using the FRED API
+- __Data Cleaning & Transformation:__ Format and clean raw data for analysis, and merge datasets to compute ALOS
+- __Train-Test Split:__ Separate data into training and testing periods
+- __Time Series EDA:__ Visualize ALOS trends and assess seasonality, use statistical tests and plots to evaluate time series stability, and apply transformations to make the data stationary
+- __Model Selection:__ Choose model parameters based on ACF/PACF plots
+- __Model Training & Evaluation__ Fit the model to the training data, predict ALOS for the upcoming quarters, and visualize results and assess prediction accuracy using error metrics.
+
 
 ## Tools
 - __Programming Language:__ Python
-- __Libraries:__ NumPy, Pandas, Matplotlib, Statsmodels, Scikit-learn
-- __Environment:__ Jupyter Notebook
-
-The project will deliver a robust and scalable forecasting model capable of predicting average ALOS for the next four quarters. This model will uncover seasonal trends in ALOS in US hospitals, particularly during peak periods (e.g., Q1 and Q4) driven by seasonal diseases like influenza, RSV, common cold, etc. The forecasted result will further help in capacity planning, resource allocation, and revenue management, helping hospitals improve operational efficiency and patient care delivery.
+- __Libraries:__ NumPy, Pandas, Seaborn, Matplotlib, Statsmodels
+- __Environment:__ Google Colab
