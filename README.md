@@ -29,6 +29,9 @@ Dataset 2: ([Total Inpatient Days for Hospitals](https://fred.stlouisfed.org/ser
 
 $ALOS = \frac{\text{total_inpatient_days}}{\text{total_discharge}}$
 
+The formula for ALOS is $ALOS = \frac{\text{total_inpatient_days}}{\text{total_discharge}}$
+
+
 ## Methods
 The project employs various time series analysis techniques, including:
 
