@@ -27,8 +27,7 @@ Dataset 2: ([Total Inpatient Days for Hospitals](https://fred.stlouisfed.org/ser
 
 * Significance: This metric captures the total utilization or "bed-day" consumption of hospital resources.
 
-The formula for ALOS is $ALOS = \frac{\text{total inpatient days}}{\text{total discharges}}$
-$\text{ALOS} = \frac{\text{total_inpatient_days}}{\text{total_discharge}}$
+$ALOS = \frac{\text{total_inpatient_days}}{\text{total_discharge}}$
 
 ## Methods
 The project employs various time series analysis techniques, including:
